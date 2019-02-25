@@ -1,0 +1,39 @@
+<view class="main">
+    <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <navigator url='list/list' wx:for="{{imgUrls}}">
+          <swiper-item>
+              <image src="{{item}}" class="slide-image" width="100%"/>
+           </swiper-item>
+        </navigator>
+    </swiper>
+    <view class="selected">
+        <view class="select-title"><text>精选主题</text></view>
+        <view class="select-top">
+            <view class="select-top-small">
+                 <navigator url="list/list"> 
+                    <image src="/image/s1.png"></image>
+                 </navigator> 
+            </view>
+            <view class="select-top-small">
+                <navigator url="list/list">
+                    <image src="/image/s2.png"></image>
+                </navigator>
+            </view>
+        </view>
+        <view class="select-bottom">
+            <navigator url="list/list">
+                <image src="/image/s3.png"></image>
+            </navigator>
+        </view>
+    </view>
+    <view class="newest">
+        <view class="newest-title"><text>最近新品</text></view>
+          <view class="newest-box" >
+            <view class="newest-list" catchtap='btn' data-id="{{item.id}}" wx:for="{{main_key}}" wx:for-item="item" wx:for-index="idx">
+              <image src="{{item.image}}"></image>
+              <view class="newest-text"><text>{{item.title}} {{item.weight}}</text></view>
+              <view class="newest-text"><text>￥ {{item.price}}</text></view>
+            </view>
+          </view>
+    </view>
+</view>
